@@ -1,20 +1,25 @@
 import smtplib
 import schedule
 import time
+import os
 import pandas as pd
+from dotenv import load_dotenv
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 from datetime import datetime
 
+# Cargar variables de entorno
+load_dotenv()
+
 # ============================================
 # CONFIGURACIÓN — El cliente solo edita esto
 # ============================================
-EMAIL_REMITENTE = "studyorj0bs@gmail.com"
-CONTRASEÑA_APP = "osoluxythisqagcd"
-EMAIL_CLIENTE = "studyorj0bs@gmail.com"
-NOMBRE_NEGOCIO = "Mi Negocio"
+EMAIL_REMITENTE = os.getenv("EMAIL_REMITENTE")
+CONTRASEÑA_APP = os.getenv("CONTRASEÑA_APP")
+EMAIL_CLIENTE = os.getenv("EMAIL_CLIENTE")
+NOMBRE_NEGOCIO = os.getenv("NOMBRE_NEGOCIO")
 HORA_ENVIO = "08:00"
 STOCK_MINIMO = 10
 # ============================================
